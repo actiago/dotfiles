@@ -1,0 +1,37 @@
+[credential "https://github.com"] username = cegohub
+[user]
+	name = cegohub
+	email = tiagoamaralc@gmail.com
+[includeIf "gitdir:/Users/cego/gitlab/"]
+    [user]
+        name = Tiago Amaral
+        email = tiagoamaralc@gmail.com
+[credential]
+	helper = osxkeychain
+[core]
+    editor = vi
+    excludesfile = ~/.gitignore
+    autocrlf = input
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+[web]
+  browser = google-chrome
+[push]
+  default = simple
+[merge]
+  tool = kdiff3
+[difftool]
+  prompt = false
+[alias]
+  c = commit
+  ca = commit -a
+  cm = commit -m
+  cam = commit -am
+  d = diff
+  dc = diff --cached
+  l = log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
+
+
