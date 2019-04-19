@@ -1,3 +1,3 @@
 # Dotfiles
-#### Arquivos de configuração para Windows e OSX
 
+## My personal dotfiles for Linux and MacOSX
