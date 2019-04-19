@@ -1,0 +1,52 @@
+[user]
+	name = Tiago Amaral
+	email = tiagoamaralc@gmail.com
+[alias]
+	b = branch
+	ck = checkout
+	cs = commit --cleanup scissors
+	d = diff
+	dc = diff --check
+	dca = diff --staged
+	dcc = diff --staged --check
+	f = fetch
+	fa = fetch --all
+	fap = fetch --all --prune
+	g = gui
+	k = !gitk --all
+	l = log
+	l1 = log -1
+	lo = log --oneline
+	lp = log --patch
+	lr = ls-remote
+	rv = remote -v
+	s = status
+	sc = show --check
+	sw = show
+	uas = submodule foreach git pull
+	wtf = log --pretty=format:\"%C(auto,yellow)%h%C(auto)%d%C(auto,reset)\\\\ by\\\\ %C(auto,blue)%cn%C(auto,reset),\\\\ %C(auto,cyan)%ar%C(auto,reset)%n\\\\ %s%n\" --stat
+[color]
+	ui = auto
+[gui]
+	# Ref: https://www.tcl.tk/man/tcl8.5/TkCmd/font.htm#M26
+	fontui = -family \"DejaVu Sans\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"DejaVu Sans Mono\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0
+	spellingdictionary = none
+[push]
+	default = simple
+[merge]
+defaultToUpstream = true
+
+# Gitlab Job
+[includeIf "gitdir:~/prejects/job"]
+  path = ~/.gitconfig-job
+
+# Personal Github
+[includeIf "gitdir:/home/tiago/github/"]
+  path = ~/.gitconfig-github
+
+# Gitconfigs examples
+# .gitconfig-github example
+# [user]
+# name = Tiago Amaral
+# email = tiagoamaralc@gmail.com
