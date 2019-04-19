@@ -1,63 +1,70 @@
-syntax on               " enable syntax highlighting
-set cursorline          " highlight the current line
-" set background=dark   " darker color scheme
-" set ruler             " show line number in bar
-set nobackup            " don't create pointless backup files; Use VCS instead
-set autoread            " watch for file changes
-set number              " show line numbers
-set showcmd             " show selection metadata
-set showmode            " show INSERT, VISUAL, etc. mode
-set showmatch           " show matching brackets
-set autoindent smartindent  " auto/smart indent
-set smarttab            " better backspace and tab functionality
-set scrolloff=5         " show at least 5 lines above/below
-filetype on             " enable filetype detection
-filetype indent on      " enable filetype-specific indenting
-filetype plugin on      " enable filetype-specific plugins
-" colorscheme cobalt      " requires cobalt.vim to be in ~/.vim/colors
+" General
+set wildmenu
+set viminfo=
+set splitright
+
+" Disable backup
+set nobackup
+set noswapfile
+set nowritebackup
+
+" Colors and theme
+filetype on
+filetype plugin off
+syntax on
 colorscheme elflord
+set background=dark
 
-" column-width visual indication
-let &colorcolumn=join(range(81,999),",")
-highlight ColorColumn ctermbg=235 guibg=#001D2F
+set number
+set ruler
+set title
 
-" tabs and indenting
-set autoindent          " auto indenting
-set smartindent         " smart indenting
-set expandtab           " spaces instead of tabs
-set tabstop=2           " 2 spaces for tabs
-set shiftwidth=2        " 2 spaces for indentation
+" Space and Tabs
+set expandtab
+set nostartofline
+set shiftwidth=4
+set tabstop=4
 
-" bells
-set noerrorbells        " turn off audio bell
-set visualbell          " but leave on a visual bell
-
-" search
-set hlsearch            " highlighted search results
-set showmatch           " show matching bracket
-
-" other
-set guioptions=aAace    " don't show scrollbar in MacVim
-" call pathogen#infect()  " use pathogen
-
-" clipboard
-set clipboard=unnamed   " allow yy, etc. to interact with OS X clipboard
-
-
-" shortcuts
-map <F2> :NERDTreeToggle<CR>
-
-" remapped keys
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
-
+" Cursos and column
+" set cursorline
 set cursorcolumn
 
+" 'colorcolumn' unsuported by VIM7.2
 if exists('+colorcolumn')
-    set colorcolumn=80
+  set colorcolumn=80
 endif
 
-highlight CursorColumn ctermbg=DarkGray                                                                                                                                          
+highlight CursorColumn ctermbg=DarkGray
 highlight ColorColumn ctermbg=DarkGray
+
+" Identation
+" filetype plugin indent on
+" set autoindent
+
+" Search
+set ignorecase
+set hlsearch
+set incsearch
+
+" Set UTF-8
+set encoding=utf-8
+set fileencoding=utf-8
+
+" Shortcuts
+map 0 ^
+
+map <Tab> :tabnext<cr>
+map <S-Tab> :tabprevious<cr>
+
+" Pathogen
+if filereadable(expand($HOME . "/.vim/autoload/pathogen.vim"))
+    execute pathogen#infect()
+endif
+
+" File syntax
+au BufNewFile,BufRead composer.lock set filetype=json
+au BufNewFile,BufRead docker-compose*.yml set filetype=yaml
+au BufNewFile,BufRead Jenkinsfile set filetype=groovy
+au BufNewFile,BufRead Vagrantfile set filetype=ruby
+au BufNewFile,BufRead *.textile set filetype=redminewiki
+au BufNewFile,BufRead *.tfstate set filetype=json
