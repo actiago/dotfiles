@@ -1,3 +1,3 @@
 # Dotfiles
 
-## My personal dotfiles for Linux and MacOSX
+## Arquivos comuns para ambientes de desenvolvimento
