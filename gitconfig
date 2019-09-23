@@ -38,15 +38,13 @@
 defaultToUpstream = true
 
 # Gitlab Job
-[includeIf "gitdir:~/prejects/job"]
-  path = ~/.gitconfig-job
+[includeIf "gitdir:/home/tiago/projetos/empresa/"]
+  path = ~/.gitconfig-empresa
 
 # Personal Github
-[includeIf "gitdir:/home/tiago/github/"]
+[includeIf "gitdir:~/projetos/github/"]
   path = ~/.gitconfig-github
 
-# Gitconfigs examples
-# .gitconfig-github example
-# [user]
-# name = Tiago Amaral
-# email = tiagoamaralc@gmail.com
+# Bitbucket
+[includeIf "gitdir:~/projetos/bitbucket/"]
+  path = ~/.gitconfig-bitbucket

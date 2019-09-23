@@ -1,0 +1,5 @@
+[user]
+    name = Tiago Amaral
+    email = tiago.amaral@work.mail
+[core]
+    sshCommand = ssh -i ~/.ssh/id_rsa-empresa   
