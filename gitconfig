@@ -45,6 +45,6 @@ defaultToUpstream = true
 [includeIf "gitdir:~/projetos/github/"]
   path = ~/.gitconfig-github
 
-# Personal Gitlab
-[includeIf "gitdir:~/projetos/gitlab/"]
-  path = ~/.gitconfig-gitlab
+# Bitbucket
+[includeIf "gitdir:~/projetos/bitbucket/"]
+  path = ~/.gitconfig-bitbucket
