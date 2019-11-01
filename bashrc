@@ -2,9 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# Disable start and stop flow control
-stty start undef stop undef
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -17,13 +14,13 @@ HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+shopt -s histappend
 export HISTFILESIZE=10000       # increase history file size (default is 500)
 export HISTSIZE=10000           # increase history size (default is 500)
 export HISTCONTROL=ignoredups:ignorespace:erasedups
 export HISTIGNORE="l:ll:ls:clear"
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -96,11 +93,6 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias pomodoro='~/github/pomodoro_timer/pomodoro.sh'
-alias gs='git status'
-alias gl='git log'
-alias gm='git commit -m'
-
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -125,24 +117,25 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+alias md='mkdir -p'
+alias iot='sudo iotop -d 30 -o -P -k'
+alias ifwatch='sudo watch --differences=cumulative --interval=30 ifconfig'
+
+# VirtualEnvWrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/home/tiago/.local/bin/virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+source /home/tiago/.local/bin/virtualenvwrapper.sh
+
+# Taskwarrior
+alias task='/snap/bin/taskwarrior-plars.task'
+
+# Size dos dir
+alias totalsize='du -hsc * | sort -h'
+
+alias xc='xclip -sel clipboard'
+
 pubip() {
   curl ifconfig.pro/ip.host
 }
-export WORKON_HOME=~/.virtualenvs
-source ~/.local/bin/virtualenvwrapper.sh
-
-# AWS Cli completion
-complete -C '/home/tiago/.virtualenvs/aws/bin/aws_completer' aws
-
-# MyAliases
-alias md='mkdir -p'
-
-# kubectl completion
-source <(kubectl completion bash)
-
-alias python=python3
-alias xc='xclip -sel clipboard'
-alias lokk='i3lock --color=01173a'
-
-# USE ZSH AS DEFAULT
-alias usezsh='chsh -s /bin/bash'
