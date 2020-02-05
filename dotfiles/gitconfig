@@ -48,3 +48,7 @@ defaultToUpstream = true
 # Bitbucket
 [includeIf "gitdir:~/projetos/bitbucket/"]
   path = ~/.gitconfig-bitbucket
+
+# Gitlab
+[includeIf "gitdir:~/projetos/bitbucket/"]
+  path = ~/.gitconfig-gitlab

@@ -121,6 +121,12 @@ fi
 alias md='mkdir -p'
 alias iot='sudo iotop -d 30 -o -P -k'
 alias ifwatch='sudo watch --differences=cumulative --interval=30 ifconfig'
+alias cdg='cd ~/projetos/g10'
+alias cdh='cd ~/projetos/github'
+# alias cd='cd -i'
+alias chmod='chmod --preserve-root'
+alias chown='chown --preserve-root'
+alias restic='/usr/bin/restic'
 
 # VirtualEnvWrapper
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
