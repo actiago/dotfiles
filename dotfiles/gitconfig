@@ -37,7 +37,7 @@
 [merge]
 defaultToUpstream = true
 
-# Gitlab Job
+# Gitlab Empresa
 [includeIf "gitdir:/home/tiago/projetos/empresa/"]
   path = ~/.gitconfig-empresa
 
@@ -50,5 +50,9 @@ defaultToUpstream = true
   path = ~/.gitconfig-bitbucket
 
 # Gitlab
-[includeIf "gitdir:~/projetos/gitlab/"]
-  path = ~/.gitconfig-gitlab
+ [includeIf "gitdir:~/projetos/gitlab/"]
+   path = ~/.gitconfig-gitlab
+
+# Eureka
+[includeIf "gitdir:~/projetos/eureka/"]
+  path = ~/.gitconfig-eureka
