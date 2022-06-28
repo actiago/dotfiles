@@ -37,22 +37,11 @@
 [merge]
 defaultToUpstream = true
 
-# Gitlab Empresa
-[includeIf "gitdir:/home/tiago/projetos/empresa/"]
-  path = ~/.gitconfig-empresa
-
 # Personal Github
 [includeIf "gitdir:~/projetos/github/"]
   path = ~/.gitconfig-github
-
-# Bitbucket
-[includeIf "gitdir:~/projetos/bitbucket/"]
-  path = ~/.gitconfig-bitbucket
 
 # Gitlab
  [includeIf "gitdir:~/projetos/gitlab/"]
    path = ~/.gitconfig-gitlab
 
-# Eureka
-[includeIf "gitdir:~/projetos/eureka/"]
-  path = ~/.gitconfig-eureka

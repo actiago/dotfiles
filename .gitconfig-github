@@ -1,0 +1,5 @@
+[user]
+    name = Tiago Amaral
+    email = tiagoamaralc@gmail.com
+[core]
+    sshCommand = ssh -i ~/.ssh/id_rsa-github
