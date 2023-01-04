@@ -10,4 +10,5 @@
 - [vim-plug](https://github.com/junegunn/vim-plug)
 - tmux with [tmux-config](https://github.com/samoshkin/tmux-config)
 - git
+- emacs from [Dunossauro dotfiles repo](https://gitlab.com/dunossauro/dotfiles/-/blob/master/emacs/init.el)
 
