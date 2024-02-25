@@ -7,7 +7,6 @@ oh-my-posh init pwsh --config "C:\Users\tiago\projetos\windows\winsc\ohMyPoshThe
 Set-Alias -Name ll -Value Get-ChildItem
 Set-Alias -Name vim -Value nvim
 Set-Alias -Name du -Value DiskUsage
-Set-Alias -Name touch -Value New-Item
 
 # KeyMaps
 Set-PSReadlineKeyHandler -Key ctrl+d -Function ViExit
@@ -15,7 +14,7 @@ Set-PSReadlineKeyHandler -Key ctrl+d -Function ViExit
 $MaximumHistoryCount = 4096
 
 Function App-Upgrade {
-  winget upgrade all
+  winget upgrade --all
 }
 
 Function Get-CmdletAlias ($cmdletname) {
