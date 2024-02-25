@@ -4,8 +4,6 @@
 oh-my-posh init pwsh --config "C:\Users\tiago\projetos\windows\winsc\ohMyPoshThemes\amro.omp.json" | Invoke-Expression
 
 # Aliases
-Set-Alias -Name getip -Value ~\projetos\windows\winsc\getmypubip.ps1
-Set-Alias -Name ifconfig -Value ~\projetos\windows\winsc\ifconfig.ps1
 Set-Alias -Name ll -Value Get-ChildItem
 Set-Alias -Name vim -Value nvim
 Set-Alias -Name du -Value DiskUsage
@@ -16,14 +14,26 @@ Set-PSReadlineKeyHandler -Key ctrl+d -Function ViExit
 
 $MaximumHistoryCount = 4096
 
-function Get-CmdletAlias ($cmdletname) {
+Function App-Upgrade {
+  winget upgrade all
+}
+
+Function Get-CmdletAlias ($cmdletname) {
   Get-Alias |
     Where-Object -FilterScript {$_.Definition -like "$cmdletname"} |
       Format-Table -Property Definition, Name -AutoSize
 }
 
+Function getip {
+  nslookup myip.opendns.com resolver1.opendns.com
+}
+
 Function Get-PubIP {
- (Invoke-WebRequest http://ifconfig.me/ip ).Content
+ (Invoke-WebRequest http://checkip.amazonaws.com).Content
+}
+
+Function ifconfig {
+  Get-NetIpAddress | Select-Object InterfaceAlias,IPAddress,AddressFamily | Format-Table
 }
 
 Function Get-Zulu {
