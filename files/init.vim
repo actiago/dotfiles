@@ -78,6 +78,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'editorconfig/editorconfig-vim'
     Plug 'honza/vim-snippets'
     Plug 'preservim/nerdtree'
+    Plug 'rust-lang/rust.vim'
 
 	" Wilder Menu
 	if has('nvim')
