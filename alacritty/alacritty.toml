@@ -1,0 +1,44 @@
+[scrolling]
+history = 25000
+
+[window]
+dimensions = {columns = 136, lines = 42}
+position = "None"
+resize_increments = true
+opacity = 0.99
+decorations = "None"
+decorations_theme_variant = "Dark"
+title = "I hate this terminal emulator..."
+dynamic_title = true
+class = {instance = "aaa", general = "bbb"}
+
+[font]
+normal = {family = "MesloLGM Nerd Font", style = "Regular"}
+size = 12
+
+[cursor]
+style = {shape = "Underline", blinking = "Always"}
+blink_interval = 500
+blink_timeout = 0
+thickness = 0.25
+
+[keyboard]
+bindings = [
+    {key = "Return", mods = "Control|Shift", action = "SpawnNewInstance"}
+]
+
+[env]
+TERM = "xterm-256color"
+
+[general]
+
+live_config_reload = true
+import = [
+    "C:\\Users\\tiago\\AppData\\Roaming\\alacritty\\gruvebox_material.toml",
+]
+
+working_directory = "C:\\Users\\tiago\\"
+
+[terminal.shell]
+program = "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+

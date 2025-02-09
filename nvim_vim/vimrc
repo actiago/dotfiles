@@ -12,7 +12,7 @@ set nowritebackup
 filetype on
 filetype plugin off
 syntax on
-colorscheme elflord
+colorscheme desert
 set background=dark
 
 set number
