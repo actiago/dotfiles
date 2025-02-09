@@ -1,15 +1,26 @@
 # PsProfile
 
 # Using Oh My Posh
-oh-my-posh init pwsh --config "C:\Users\tiago\projetos\windows\winsc\ohMyPoshThemes\amro.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "C:\Users\tiago\projetos\windows\winsc\ohMyPoshThemes\gruvbox.omp.json" | Invoke-Expression
 
 # Aliases
 Set-Alias -Name ll -Value Get-ChildItem
 Set-Alias -Name vim -Value nvim
 Set-Alias -Name du -Value DiskUsage
+# Set-Alias -Name ubu -Value ubuntu2204.exe
+# Set-Alias -Name touch -Value New-Item
 
 # KeyMaps
 Set-PSReadlineKeyHandler -Key ctrl+d -Function ViExit
+Set-PSReadLineKeyHandler -Chord "Tab" -Function AcceptSuggestion
+Set-PSReadLineKeyHandler -Chord "RightArrow" -Function ForwardWord
+# ler aqui: https://stackoverflow.com/questions/74897569/how-to-change-the-suggestion-completion-key-on-powershell-7-3-0
+Set-PSReadlineKeyHandler -Key Tab -Function AcceptSuggestion
+Set-PSReadLineKeyHandler -Chord "Shift+Tab" -Function TabCompleteNext
+Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
+Set-PSReadLineKeyHandler -Chord "RightArrow" -Function ForwardWord
+Set-PSReadLineKeyHandler -Chord "LeftArrow" -Function BackwardWord
 
 $MaximumHistoryCount = 4096
 
@@ -102,3 +113,6 @@ function pgrep($name) {
         ps $name
 }
 
+function whereis($name) {
+        (Get-Command $name).Source
+}
