@@ -21,3 +21,6 @@
 - [OhMyPosh](https://ohmyposh.dev/)
 - Windows Terminal
 
+### ToDo
+
+- [ ] Trocar o [tmux-config](https://github.com/samoshkin/tmux-config) pelo [.tmux](https://github.com/gpakosz/.tmux)
