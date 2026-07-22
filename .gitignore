@@ -60,4 +60,13 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+### Stow ###
+# Backups criados pelo install.sh
+*.backup.*
+
+### Windows ###
+# Ignorar arquivos específicos do Windows no Linux
+Thumbs.db
+desktop.ini
+
 # End of https://www.gitignore.io/api/git,linux,macos

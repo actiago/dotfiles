@@ -1,0 +1,36 @@
+# Changelog
+
+Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
+
+O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/),
+e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.0] - 2026-07-22
+
+### Adicionado
+
+- Gerenciamento via GNU Stow
+- Script `install.sh` para instalação automatizada
+- Pacotes Stow: `alacritty/`, `bash/`, `git/`, `nvim/`, `tmux/`, `vim/`
+- CHANGELOG.md
+
+### Alterado
+
+- Reorganização completa da estrutura de diretórios para compatibilidade com Stow
+- `.bashrc` atualizado com a versão do sistema
+- `.tmux.conf` atualizado com a versão do sistema (tema Catppuccin)
+- `init.vim` atualizado com a versão do sistema (coc.nvim, Catppuccin)
+- `.gitignore` atualizado com regras para backups do Stow e Windows
+- README.md atualizado com instruções do Stow
+
+### Removido
+
+- Diretório `linux/` (substituído pelos pacotes `bash/` e `tmux/`)
+- Diretório `nvim_vim/` (substituído pelos pacotes `nvim/` e `vim/`)
+
+## [0.2.0] - Anterior
+
+### Estrutura antiga
+
+- Organização por sistema operacional: `linux/`, `windows/`
+- Sem gerenciamento via Stow
