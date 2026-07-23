@@ -15,7 +15,7 @@ set -euo pipefail
 DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # Lista de pacotes disponíveis (excluindo windows)
-PACKAGES=("alacritty" "bash" "git" "nvim" "tmux" "vim")
+PACKAGES=("alacritty" "bash" "git" "nvim" "tmux" "vim" "zsh")
 
 # Cores para output
 RED='\033[0;31m'

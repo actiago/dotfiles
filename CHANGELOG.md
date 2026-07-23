@@ -5,6 +5,14 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2026-07-22
+
+### Corrigido
+
+- README.md: estrutura atualizada — removido diretório `tmux/.tmux/` inexistente, adicionado pacote `alacritty/`
+- `.pre-commit-config.yaml`: atualizado `pre-commit-hooks` de `v2.1.0` para `v5.0.0`
+- `VERSION`: atualizado de `0.2.0` para `1.0.0`
+
 ## [1.0.0] - 2026-07-22
 
 ### Adicionado
