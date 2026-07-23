@@ -57,8 +57,8 @@ sudo zypper install stow
 # Instalar todos os pacotes
 ./install.sh
 
-# Instalar apenas pacotes específicos
-./install.sh bash git nvim
+# Instalar apenas pacotes específicos (ex: zsh, git e alacritty)
+./install.sh zsh git alacritty
 
 # Ver ajuda
 ./install.sh --help
@@ -68,15 +68,17 @@ O script faz backup automático dos arquivos existentes antes de criar os symlin
 
 ### 3. Gerenciar manualmente com Stow
 
+Cada diretório na raiz do repositório é um "pacote" Stow. Substitua `<pacote>` pelo nome do diretório desejado (ex: `bash`, `zsh`, `git`, `alacritty`, `tmux`, `vim`, `nvim`).
+
 ```bash
-# Instalar um pacote
-stow -d ~/projetos/github/dotfiles -t $HOME bash
+# Instalar um pacote (ex: zsh)
+stow -d ~/projetos/github/dotfiles -t $HOME zsh
 
 # Remover um pacote
-stow -D -d ~/projetos/github/dotfiles -t $HOME bash
+stow -D -d ~/projetos/github/dotfiles -t $HOME zsh
 
 # Atualizar após alterações
-stow --restow -d ~/projetos/github/dotfiles -t $HOME bash
+stow --restow -d ~/projetos/github/dotfiles -t $HOME zsh
 ```
 
 ## Pós-instalação
