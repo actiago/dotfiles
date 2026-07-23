@@ -29,6 +29,7 @@ dotfiles/
 │   ├── .zshrc
 │   └── .p10k.zsh
 └── windows/                # Apenas Windows (não gerenciado por stow)
+    ├── alacritty.toml
     ├── Microsoft.PowerShell_profile.ps1
     └── settings.json
 ```
@@ -84,6 +85,22 @@ stow --restow -d ~/projetos/github/dotfiles -t $HOME zsh
 ## Pós-instalação
 
 Após instalar os dotfiles com Stow, é necessário configurar os gerenciadores de plugins:
+
+### Alacritty
+
+A configuração do Alacritty para Linux é gerenciada pelo Stow. Para instalar apenas o Alacritty:
+
+```bash
+# Via script (recomendado)
+./install.sh alacritty
+
+# Ou manualmente com Stow
+stow --restow -d ~/projetos/github/dotfiles -t $HOME alacritty
+```
+
+Isso criará o symlink `~/.config/alacritty/alacritty.toml` apontando para o arquivo no repositório.
+
+> **Nota para Windows**: a configuração do Alacritty para Windows está em `windows/alacritty.toml` e deve ser copiada manualmente para `%APPDATA%\alacritty\alacritty.toml`.
 
 ### Tmux - Instalar plugins
 

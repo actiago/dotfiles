@@ -41,4 +41,3 @@ working_directory = "C:\\Users\\tiago\\"
 
 [terminal.shell]
 program = "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
-

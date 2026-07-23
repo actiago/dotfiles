@@ -5,6 +5,17 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-07-22
+
+### Adicionado
+
+- `windows/alacritty.toml` — configuração do Alacritty para Windows (cópia da config original)
+
+### Alterado
+
+- `alacritty/.config/alacritty/alacritty.toml` — ajustado para Linux: `import` usa `~/.config/alacritty/`, `working_directory` usa `~`, shell alterado para `/bin/bash`
+- `VERSION`: atualizado de `1.0.0` para `1.1.0`
+
 ## [1.0.1] - 2026-07-22
 
 ### Corrigido
