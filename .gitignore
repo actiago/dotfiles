@@ -63,6 +63,7 @@ Temporary Items
 ### Stow ###
 # Backups criados pelo install.sh
 *.backup.*
+**/*.backup.*
 
 ### Windows ###
 # Ignorar arquivos específicos do Windows no Linux
