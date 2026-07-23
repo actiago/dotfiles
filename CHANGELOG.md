@@ -5,6 +5,23 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-07-22
+
+### Adicionado
+
+- `alacritty/.config/alacritty/alacritty.toml` — configuração do Alacritty para Linux com shell `/bin/zsh`
+- `alacritty/.config/alacritty/gruvebox_material.toml` — tema Gruvbox Material Dark para Alacritty
+
+### Alterado
+
+- `.gitignore`: adicionado `**/*.backup.*` para ignorar backups do Stow em subpastas
+- `VERSION`: atualizado de `1.1.0` para `1.2.0`
+
+### Removido
+
+- `alacritty/.config/alacritty/` — arquivos de backup (`*.backup.*`) gerados pelo install.sh
+- `tmux/.tmux/` — diretório vazio sem conteúdo
+
 ## [1.1.0] - 2026-07-22
 
 ### Adicionado
