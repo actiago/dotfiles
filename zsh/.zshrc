@@ -118,7 +118,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias codium='flatpak run com.vscodium.codium'
 # --- batery status ---
-alias getbat='upower -i $(upower -e | grep BAT) | grep --color=never -E "state|to full|to empty|percentage"' 
+alias getbat='upower -i $(upower -e | grep BAT) | grep --color=never -E "state|to full|to empty|percentage"'
 
 # --- aws cli ---
 #alias aws='podman run --rm -ti -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
@@ -160,3 +160,7 @@ tflint() {
 }
 export GOPATH=~/go
 export PATH="$PATH:$(go env GOPATH)/bin"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
