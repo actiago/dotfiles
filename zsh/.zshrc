@@ -132,15 +132,35 @@ aws() {
     amazon/aws-cli "$@"
 }
 
-
-# --- Terraform wrapper ---
+# --- Terraform wrapper (versão fixada — nunca :latest) ---
 terraform() {
+  # 1) Usa TF_VERSION se definido
+  local tf_version="${TF_VERSION:-}"
+
+  # 2) Senão, procura o .terraform-version mais próximo (sobe até a raiz,
+  #    como o tfenv faz) — funciona de qualquer subdiretório do repositório
+  if [[ -z "$tf_version" ]]; then
+    local dir="$PWD"
+    while [[ "$dir" != "/" ]]; do
+      if [[ -f "$dir/.terraform-version" ]]; then
+        tf_version="$(tr -d '[:space:]' < "$dir/.terraform-version")"
+        break
+      fi
+      dir="$(dirname "$dir")"
+    done
+  fi
+
+  # 3) Fora de um repositório com .terraform-version, usa o default fixado
+  tf_version="${tf_version:-1.14.6}"
+  local tf_image="${TF_IMAGE:-docker.io/hashicorp/terraform:${tf_version}}"
+
   podman container run --rm -it \
     -v "$(pwd):/workspace" -w /workspace \
     -v "$HOME/.aws:/root/.aws:ro" \
     -e AWS_PROFILE=default \
-    docker.io/hashicorp/terraform:latest "$@"
+    "$tf_image" "$@"
 }
+
 # Based on command
 # podman run --rm -ti -v /home/tiago:/workspace -w /workspace -v /home/tiago/.aws:/root/.aws:ro -e AWS_PROFILE=default docker.io/hashicorp/terraform:latest plan
 #
